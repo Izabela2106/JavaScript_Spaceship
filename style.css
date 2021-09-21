@@ -23,16 +23,21 @@
 body{
     font-family: "Lato", sans-serif;
     box-sizing: border-box;
-}
-.container{
     width:100vw;
     height:100vh;
+
+
+
+}
+
+.container{
+    width:inherit;
+    height:inherit;
     background-color:var(--background-color);
     background-image:url(images/background.png);
-    background-size: cover;
-background-repeat: repeat-x;    
+    background-size:cover;
     position: relative;
-    max-height: 100vw;
+    
 }
 
 .ship{
@@ -61,7 +66,7 @@ background-size:contain;
 .modal{
     width:100vw;
     height:100vh; 
-     background-color:rgb(0,0,0,0.5);
+    background-color:rgb(0,0,0,0.5);
     z-index:2;
     position:absolute;
     top:0;
@@ -98,8 +103,14 @@ background-size:contain;
      box-shadow: 0 0 1.5rem white;
 }
 .modal_text{
-    font-size:40px;
+    font-size:25px;
     margin-bottom: 2rem;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    margin:2rem;
+
 }
 
 

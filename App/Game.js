@@ -26,14 +26,14 @@ class Game{
     ship=new Spaceship(this.elements.container);
     
     init(){
+        console.log('game init')
       this.ship.init();
-        this.newGame();
         this.elements.modalButton.addEventListener('click',()=>{this.newGame()})
     }
         
         
         newGame(){
-                this.elements.modal.classList.add('hide');
+            this.elements.modal.classList.add('hide');
         this.points=0;
         this.lives=3;
             this.updateLives();

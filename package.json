@@ -1,15 +1,23 @@
 {
   "name": "myspaceship",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://spaceship-izabela2106.netlify.app/",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "http-server"
+    "start": "http-server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "http-server": "^0.12.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Izabela2106/JavaScript_Spaceship.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Izabela2106/JavaScript_Spaceship/issues"
+  },
+  "homepage": "https://github.com/Izabela2106/JavaScript_Spaceship#readme"
 }
