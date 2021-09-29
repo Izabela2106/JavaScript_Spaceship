@@ -103,14 +103,16 @@ background-size:contain;
      box-shadow: 0 0 1.5rem white;
 }
 .modal_text{
-    font-size:25px;
+    font-size:19px;
     margin-bottom: 2rem;
     display:flex;
     justify-content: center;
     align-items:center;
     text-align: center;
     margin:2rem;
-
+    font-weight: 150;
+    padding: 0 9rem;
+ 
 }
 
 
