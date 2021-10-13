@@ -1,285 +1,262 @@
-:root{
-    --background-color:#000;
-    --bacground-color-warning:#510303;
-    --enemy-size: 64px;
-    --big-enemy-size:128px;
-    --ship-size:64px;
-    
-    
-    --ships-animation-time:200ms;
-    --explosion-animation-time:1000ms;
-}
+:root {
+  --background-color: #000;
+  --bacground-color-warning: #510303;
+  --enemy-size: 64px;
+  --big-enemy-size: 128px;
+  --ship-size: 64px;
 
+  --ships-animation-time: 200ms;
+  --explosion-animation-time: 1000ms;
+}
 
 *,
 *::after,
-*::before{
-    margin:0;
-    padding: 0;
-    box-sizing: inherit;
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+}
 
-body{
-    font-family: "Lato", sans-serif;
-    box-sizing: border-box;
-    width:100vw;
-    height:100vh;
+.container {
+  width: inherit;
+  height: inherit;
+  background-color: var(--background-color);
+  background-image: url(images/background.png);
+  background-size: cover;
+  position: relative;
+}
 
+.ship {
+  width: 64px;
+  height: 64px;
+  background-image: url(images/ship.png);
+  animation: ship var(--ships-animation-time) steps(8) infinite;
+  position: absolute;
+}
 
+.info {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  margin: 0 1rem;
+}
+.star {
+  background-image: url(images/liveWhite.png);
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background-size: contain;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  width: 50vw;
+  height: 50vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid white;
+}
+.modal_button {
+  width: 150px;
+  height: 60px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 1rem white;
+  font-size: 15px;
+}
+.modal_button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 1.5rem white;
+}
+.modal_text {
+  font-size: 19px;
+  margin: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 150;
 
 }
 
-.container{
-    width:inherit;
-    height:inherit;
-    background-color:var(--background-color);
-    background-image:url(images/background.png);
-    background-size:cover;
-    position: relative;
-    
+@keyframes ship {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 512px;
+  }
 }
 
-.ship{
-    width:64px;
-    height:64px;
-    background-image:url(images/ship.png);
-    animation: ship var(--ships-animation-time) steps(8) infinite;
-    position: absolute;
+.bullet {
+  width: 12px;
+  height: 24px;
+  background-image: url(images/bullet.png);
+  background-size: cover;
+  position: absolute;
 }
 
-.info{
-    color:white;
-    display: flex;
-    justify-content: space-between;
-    font-size:30px;
-    margin: 0 1rem;
-}
-.star{
-    background-image: url(images/liveWhite.png);
-    width: 35px;
-    height: 35px;
-    position: absolute;
-background-size:contain;
+.enemy1 {
+  height: 148.5px;
+  width: 54px;
+  background-image: url(images/e1.png);
+  background-size: cover;
+  position: absolute;
+  animation: enemy1 var(--ships-animation-time) steps(4) infinite;
 }
 
-.modal{
-    width:100vw;
-    height:100vh; 
-    background-color:rgb(0,0,0,0.5);
-    z-index:2;
-    position:absolute;
-    top:0;
-    left:0;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-}
-.modal-content{
-    width:50vw;
-    height:50vh; 
-    background-color: black;
-    color:white;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction:column;
-        border:1px solid white;
-
-}
-.modal_button{
-    width:150px;
-    height:60px;
-    border:1px solid white;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    box-shadow: 0 0 1rem white;
-        font-size:15px;
-
-}
-.modal_button:hover{
-    cursor: pointer;
-     box-shadow: 0 0 1.5rem white;
-}
-.modal_text{
-    font-size:19px;
-    margin-bottom: 2rem;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    text-align: center;
-    margin:2rem;
-    font-weight: 150;
-    padding: 0 9rem;
- 
+@keyframes enemy1 {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 216px;
+  }
 }
 
+.enemy2 {
+  height: 102px;
+  width: 56px;
+  background-image: url(images/e2.png);
+  background-size: cover;
+  position: absolute;
+  animation: enemy2 var(--ships-animation-time) steps(4) infinite;
+}
 
-@keyframes ship{
-    from{
-        background-position-x:0px;   
+@keyframes enemy2 {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 224px;
+  }
+}
+
+.enemy3 {
+  height: 100px;
+  width: 37.5px;
+  background-image: url(images/e3.png);
+  background-size: cover;
+  position: absolute;
+  animation: enemy3 var(--ships-animation-time) steps(4) infinite;
+}
+
+@keyframes enemy3 {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 150px;
+  }
+}
+
+.enemy4 {
+  height: 79px;
+  width: 32px;
+  background-image: url(images/e4.png);
+  background-size: cover;
+  position: absolute;
+  animation: enemy4 var(--ships-animation-time) steps(4) infinite;
+}
+
+@keyframes enemy4 {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 128px;
+  }
+}
+
+.enemy5 {
+  height: 110px;
+  width: 122px;
+  background-image: url(images/e5.png);
+  background-size: cover;
+  position: absolute;
+  animation: enemy5 400ms steps(6) infinite;
+}
+
+@keyframes enemy5 {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 725px;
+  }
+}
+
+.smallExplosion {
+  width: 64px;
+  height: 64px;
+  background-image: url(images/explosion.png);
+  animation: explosion var(--explosion-animation-time) steps(17) forwards;
+  position: fixed;
+}
+
+.bigExplosion {
+  width: 128px;
+  height: 128px;
+  background-image: url(images/explosion-big.png);
+  animation: explosionBig var(--explosion-animation-time) steps(17) forwards;
+  position: fixed;
+}
+
+@keyframes explosion {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 1088px;
+  }
+}
+
+@keyframes explosionBig {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: 2176px;
+  }
+}
+
+.hide {
+  display: none;
+}
+.warning {
+  background-color: var(--bacground-color-warning);
+}
+@media screen and (max-width:500px){
+    .modal_text {
+        font-size: 12px;
     }
-    to{
-        background-position-x:512px;
-    }
-}
-
-.bullet{
-    width:12px;
-    height:24px;
-    background-image:url(images/bullet.png);
-    background-size: cover;
-    position: absolute;
-}
-
-
-
-.enemy1{
-    height: 148.5px;
-    width:54px;
-    background-image: url(images/e1.png);
-        background-size: cover;
-    position: absolute;
-        animation: enemy1 var(--ships-animation-time) steps(4) infinite;
- 
-}
-
-@keyframes enemy1{
-    from{
-        background-position-x:0px;   
-    }
-    to{
-        background-position-x:216px;
-    }
-}
-
-
-.enemy2{
-    height: 102px;
-    width:56px;
-    background-image: url(images/e2.png);
-        background-size: cover;
-    position: absolute;
-        animation: enemy2 var(--ships-animation-time) steps(4) infinite;
- 
-}
-
-@keyframes enemy2{
-    from{
-        background-position-x:0px;   
-    }
-    to{
-        background-position-x:224px;
-    }
-}
-
-
-
-.enemy3{
-    height: 100px;
-    width:37.5px;
-    background-image: url(images/e3.png);
-        background-size: cover;
-    position:absolute;
-        animation: enemy3 var(--ships-animation-time) steps(4) infinite;
- 
-}
-
-@keyframes enemy3{
-    from{
-        background-position-x:0px;   
-    }
-    to{
-        background-position-x:150px;
-    }
-}
-
-.enemy4{
-    height: 79px;
-    width:32px;
-    background-image: url(images/e4.png);
-        background-size: cover;
-    position: absolute;
-        animation: enemy4 var(--ships-animation-time) steps(4) infinite;
- 
-}
-
-@keyframes enemy4{
-    from{
-        background-position-x:0px;   
-    }
-    to{
-        background-position-x:128px;
-    }
-}
-
-
-
-
-.enemy5{
-    height: 110px;
-    width:122px;
-    background-image: url(images/e5.png);
-        background-size: cover;
-    position: absolute;
-        animation: enemy5 400ms steps(6) infinite;
- 
-}
-
-@keyframes enemy5{
-    from{
-        background-position-x:0px;   
-    }
-    to{
-        background-position-x:725px;
-    }
-}
-
-
-.smallExplosion{
-    width:64px;
-    height:64px;
-    background-image:url(images/explosion.png);
-    animation: explosion var(--explosion-animation-time) steps(17) forwards;
-        position: fixed;
-
-}
-
-.bigExplosion{
-    width:128px;
-    height:128px;
-    background-image:url(images/explosion-big.png);
-    animation: explosionBig var(--explosion-animation-time) steps(17) forwards;
-        position: fixed;
-
-}
-
-@keyframes explosion{
-    from{
-        background-position-x:0px;   
-    }
-    to{
-        background-position-x:1088px;
-    }
-}
-
-@keyframes explosionBig{
-    from{
-        background-position-x:0px;   
-    }
-    to{
-        background-position-x:2176px;
+    .modal_button{
+        width: 100px;
+        height: 30px;
     }
 }
-
-.hide{
-    display:none;
-}
-.warning{
-    background-color: var(--bacground-color-warning);
-}
-
-
-
-
